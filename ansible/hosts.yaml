@@ -1,0 +1,17 @@
+all:
+  vars:
+    ansible_user: ubuntu
+  children:
+    control_plane:
+      hosts:
+        rp1.sm.coalface.com:
+    nodes:
+      hosts:
+        rp2.sm.coalface.com:
+        rp3.sm.coalface.com:
+        rp4.sm.coalface.com:
+        rp5.sm.coalface.com:
+    cluster:
+      children:
+        control_plane:
+        nodes:
