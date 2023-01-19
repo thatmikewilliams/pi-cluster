@@ -1,0 +1,14 @@
+---
+# This is the Main Playbook - containing ALL the roles
+# Hash out roles that you do not want to install and unhash those that you do want
+# ################################################################################
+- name:
+  hosts: all
+  roles:
+    - { role: "common" }
+
+- name:
+  hosts: oled
+  roles:
+    - { role: "oled" }
+

@@ -1,0 +1,60 @@
+- name: Install i2c package to detect OLED presence
+  ansible.builtin.apt:
+    name: i2c-tools
+    state: present
+  become: yes
+
+    #- name: Check the target machine has an OLED display on the i2cbus
+    #  shell: i2cdetect -y 1 | grep 3c
+    #  register: oled_present_check
+
+- name: Clone the OLED_Stats repo used to drive the front panel display
+  ansible.builtin.git:
+    repo: https://github.com/mklements/OLED_Stats.git
+    dest: /home/ubuntu/OLED_Stats
+    update: no
+
+- name: Patch the OLED HEIGHT variable from 64 to 32 in stats.py
+  ansible.builtin.lineinfile:
+    path: /home/ubuntu/OLED_Stats/stats.py
+    regexp: '^HEIGHT = 64'
+    line: HEIGHT = 32
+
+- name: Install OLED package dependencies
+  ansible.builtin.apt:
+    name:
+      - python3-pip
+      - python3-dev
+      - python3-pil
+      - python3-setuptools
+      - python3-rpi.gpio
+      - libraspberrypi-bin
+    state: present
+  become: yes
+
+- name: Install adafruit circuitpython python package
+  ansible.builtin.pip:
+    name: adafruit-circuitpython-ssd1306
+
+- name: Ensure system group gpio exists
+  ansible.builtin.group:
+    name: gpio
+    state: present
+    system: true
+  become: yes
+
+- name: Add user ubuntu to gpio, video and i2c groups
+  user:
+    name: "ubuntu"
+    groups:
+      - gpio
+      - video
+      - i2c
+    append: yes
+  become: yes
+
+- name: Add a cronjob to run the OLED stats.py program in the background on reboot
+  ansible.builtin.cron:
+    name: "On reboot, run the OLED stats monitoring python script"
+    special_time: reboot
+    job: "cd /home/ubuntu/OLED_Stats && python3 stats.py &"

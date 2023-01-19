@@ -1,0 +1,14 @@
+- name: Upgrade all packages
+  apt:
+    name: "*"
+    state: latest
+  become: yes
+  register: upgrade_results
+
+# Show Upgrade Results
+- name: Show Upgrade Results
+  debug:
+    msg:
+    - "################ Show Upgrade Results"
+    - "{{ upgrade_results }}"
+
