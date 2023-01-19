@@ -1,0 +1,1 @@
+KERNEL=="gpiomem", OWNER="root", GROUP="gpio"
