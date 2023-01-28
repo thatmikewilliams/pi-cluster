@@ -43,9 +43,9 @@
     system: true
   become: yes
 
-- name: Add user ubuntu to gpio, video and i2c groups
+- name: Add user '{{ ansible_user }}' to gpio, video and i2c groups
   user:
-    name: "ubuntu"
+    name: '{{ ansible_user }}' 
     groups:
       - gpio
       - video
