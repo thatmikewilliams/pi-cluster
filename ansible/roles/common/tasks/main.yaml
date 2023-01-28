@@ -1,0 +1,19 @@
+- name: Print all available facts
+  ansible.builtin.debug:
+    var: ansible_facts
+
+- name: Upgrade the OS (apt-get update && apt-get upgrade)
+  ansible.builtin.apt:
+    update_cache: yes
+    upgrade: full
+  become: yes
+
+- name: Clean unwanted old packages and config
+  ansible.builtin.apt:
+    autoremove: yes
+    purge: yes
+  become: yes
+
+- include_tasks: install-ntp.yaml
+- include_tasks: install-docker.yaml
+- include_tasks: install-mlocate.yaml

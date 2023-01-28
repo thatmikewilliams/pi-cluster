@@ -1,0 +1,9 @@
+- name: ensure mlocate is installed
+  become: yes
+  apt:
+    name: mlocate
+    state: present
+
+- name: Update locate database
+  become: yes
+  command: updatedb

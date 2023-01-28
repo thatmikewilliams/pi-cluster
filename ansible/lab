@@ -4,14 +4,22 @@ all:
   children:
     control_plane:
       hosts:
-        rp1.sm.coalface.com:
+        rp1:
     nodes:
       hosts:
-        rp2.sm.coalface.com:
-        rp3.sm.coalface.com:
-        rp4.sm.coalface.com:
-        rp5.sm.coalface.com:
+        rp2:
+        rp3:
+        rp4:
+        rp5:
     cluster:
       children:
         control_plane:
         nodes:
+
+    oled:
+      hosts:
+        rp2:
+        rp3:
+        rp4:
+        rp5:
+
