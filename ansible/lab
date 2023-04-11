@@ -9,7 +9,6 @@ all:
       hosts:
         rp2:
         rp3:
-        rp4:
         rp5:
     cluster:
       children:
@@ -18,8 +17,8 @@ all:
 
     oled:
       hosts:
+        rp1:
         rp2:
         rp3:
-        rp4:
         rp5:
 
