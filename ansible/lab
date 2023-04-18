@@ -7,9 +7,10 @@ all:
         rp1:
     nodes:
       hosts:
+        rp1:
         rp2:
         rp3:
-        rp5:
+        rp4:
     cluster:
       children:
         control_plane:
@@ -20,5 +21,5 @@ all:
         rp1:
         rp2:
         rp3:
-        rp5:
+        rp4:
 
