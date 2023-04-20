@@ -14,6 +14,8 @@
     purge: yes
   become: yes
 
+- include_tasks: change-hostnames.yaml
 - include_tasks: install-ntp.yaml
 - include_tasks: install-docker.yaml
 - include_tasks: install-mlocate.yaml
+- include_tasks: install-linux-modules-extra-raspi.yaml
