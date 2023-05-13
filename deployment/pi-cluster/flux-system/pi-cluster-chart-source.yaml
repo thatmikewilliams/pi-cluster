@@ -22,7 +22,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 1m0s
-  path: ./deployment/releases <--- here
+  path: ./deployment/pi-cluster
   prune: true
   sourceRef:
     kind: GitRepository
