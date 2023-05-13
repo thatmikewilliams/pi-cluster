@@ -1,15 +1,16 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta1                                                                                                                     
-kind: HelmRelease                                                                                                                                              
-metadata:                                                                                                                                                      
-  name: neo4j-test                                                                                                                                             
-  namespace: test                                                                                                                                              
-spec:                                                                                                                                                          
-  chart:                                                                                                                                                       
-    spec:                                                                                                                                                      
-      chart: deployment/charts/neo4j-standalone                                                                                                                
-      reconcileStrategy: ChartVersion                                                                                                                          
-      sourceRef:                                                                                                                                               
-        kind: GitRepository                                                                                                                                    
-        name: pi-cluster                                                                                                                                       
-      version: '*'                                                                                                                                             
-  interval: 1m0s                                                                                                                                               
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: neo4j-test
+  namespace: test
+spec:
+  chart:
+    spec:
+      chart: deployment/charts/neo4j-standalone
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: GitRepository
+        name: pi-cluster
+  interval: 1m0s
+
