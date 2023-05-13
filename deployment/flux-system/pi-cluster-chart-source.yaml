@@ -1,0 +1,15 @@
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: pi-cluster
+  namespace: flux-system
+spec:
+  interval: 1m
+  url: git@github.com:thatmikewilliams/pi-cluster.git
+  ref:
+    branch: master
+  ignore: |
+    # exclude all
+    /*
+    # include charts directory
+    !/deployment/charts/    
