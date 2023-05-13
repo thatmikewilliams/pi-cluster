@@ -13,17 +13,3 @@ spec:
     /*
     # include charts directory
     !/deployment/charts/    
-
----
-apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
-kind: Kustomization
-metadata:
-  name: pi-cluster
-  namespace: flux-system
-spec:
-  interval: 1m0s
-  path: ./deployment/pi-cluster
-  prune: true
-  sourceRef:
-    kind: GitRepository
-    name: pi-cluster
