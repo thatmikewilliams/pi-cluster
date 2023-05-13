@@ -37,3 +37,10 @@ sudo cat /var/lib/rancher/k3s/server/node-token
 On the remaining 3 worker nodes install k3s, pointing at the server node IP with the cluster token:
 curl -sfL https://get.k3s.io | K3S_URL=https://$YOUR_SERVER_NODE_IP:6443 K3S_TOKEN=$YOUR_CLUSTER_TOKEN sh -
 
+
+Bootstrap flux:
+flux bootstrap github \
+  --owner=thatmikewilliams \
+  --repository=pi-cluster \
+  --path=deployment/pi-cluster \
+  --personal
