@@ -5,7 +5,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 1m
-  url: ssh://git@github.com:thatmikewilliams/pi-cluster
+  url: ssh://git@github.com/thatmikewilliams/pi-cluster
   ref:
     branch: master
   ignore: |
