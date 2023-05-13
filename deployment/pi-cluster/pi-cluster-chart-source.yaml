@@ -8,6 +8,8 @@ spec:
   url: ssh://git@github.com/thatmikewilliams/pi-cluster
   ref:
     branch: master
+  secretRef:
+    name: flux-system
   ignore: |
     # exclude all
     /*
