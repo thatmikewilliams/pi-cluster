@@ -7,7 +7,7 @@ metadata:
 spec:
   chart:
     spec:
-      chart: deployment/charts/neo4j-standalone
+      chart: neo4j-standalone
       reconcileStrategy: ChartVersion
       sourceRef:
         kind: GitRepository
