@@ -1,7 +1,7 @@
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: GitRepository
 metadata:
-  name: pi-cluster
+  name: pi-cluster-charts
   namespace: flux-system
 spec:
   interval: 1m
@@ -13,3 +13,17 @@ spec:
     /*
     # include charts directory
     !/deployment/charts/    
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: pi-cluster-charts
+  namespace: flux-system
+spec:
+  interval: 1m0s
+  path: ./deployment/charts
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: pi-cluster-charts
+
