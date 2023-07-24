@@ -11,7 +11,7 @@ spec:
   secretRef:
     name: flux-system
   ignore: |
-    # exclude all
-    /*
     # include charts directory
     !/deployment/charts/*
+    # exclude all
+    /*
