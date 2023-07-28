@@ -1,0 +1,14 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmChart
+metadata:
+  name: charts
+  namespace: default
+spec:
+  interval: 5m0s
+  chart: ./deployment/charts
+  reconcileStrategy: ChartVersion
+  sourceRef:
+    kind: GitRepository
+    name: pi-cluster-charts
+  version: '5.*'
