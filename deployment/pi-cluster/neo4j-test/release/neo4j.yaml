@@ -2,12 +2,12 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: neo4j-test2
-  namespace: test1
+  name: neo4j-test
+  namespace: test
 spec:
   chart:
     spec:
-      chart: deployment/charts/neo4j-standalone-bogus
+      chart: deployment/charts/neo4j-standalone
       reconcileStrategy: ChartVersion
       sourceRef:
         kind: GitRepository
