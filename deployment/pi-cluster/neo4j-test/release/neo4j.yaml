@@ -14,3 +14,22 @@ spec:
         name: pi-cluster-charts
   interval: 1m0s
 
+  values:
+    neo4j:
+      name: neo4j1
+      resources:
+        requests:
+         cpu: "1000m"
+         memory: "2Gi"
+        limits:
+         cpu: "2000m"
+         memory: "4Gi"
+      volumes:
+        data:
+          mode: defaultStorageClass
+          defaultStorageClass:
+            accessModes:
+              - ReadWriteOnce
+            requests:
+              storage: 2Gi
+
