@@ -3,7 +3,7 @@ apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: HelmChart
 metadata:
   name: charts
-  namespace: default
+  namespace: flux-system
 spec:
   interval: 5m0s
   chart: ./deployment/charts
