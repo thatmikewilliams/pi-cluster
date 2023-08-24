@@ -47,11 +47,11 @@ spec:
       value: "true"
     global: null
     image:
-      pullPolicy: Always
+      pullPolicy: IfNotPresent
       pullSecret: ""
       registry: docker.io
-      repository: kahootali/activemq-artemis
-      tag: 2.17.0
+      repository: apache/activemq-artemis
+      tag: 2.30.0
     persistence:
       accessMode: ReadWriteOnce
       enabled: false
