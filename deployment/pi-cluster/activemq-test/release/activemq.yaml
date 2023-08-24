@@ -1,0 +1,80 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: activemq-test
+  namespace: test
+spec:
+  chart:
+    spec:
+      chart: activemq-artemis
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: activemq-artemis
+  interval: 1m0s
+  values:
+    antiAffinity: soft
+    artemisPassword: simetraehcapa
+    artemisUser: artemis
+    configmap:
+      extraConfig: {}
+    deployment:
+      annotations: {}
+      masterLivenessProbe:
+        initialDelaySeconds: 10
+        periodSeconds: 10
+        tcpSocket:
+          port: http
+      masterReadinessProbe:
+        initialDelaySeconds: 10
+        periodSeconds: 10
+        tcpSocket:
+          port: core
+      securityContext: {}
+      slaveLivenessProbe:
+        initialDelaySeconds: 10
+        periodSeconds: 10
+        tcpSocket:
+          port: http
+      slaveReadinessProbe:
+        initialDelaySeconds: 10
+        periodSeconds: 10
+        tcpSocket:
+          port: core
+    env:
+    - name: DISABLE_SECURITY
+      value: "true"
+    global: null
+    image:
+      pullPolicy: Always
+      pullSecret: ""
+      registry: docker.io
+      repository: kahootali/activemq-artemis
+      tag: 2.17.0
+    persistence:
+      accessMode: ReadWriteOnce
+      enabled: false
+      size: 2Gi
+      testJournalPerformance: AUTO
+    prometheus:
+      jmx:
+        interval: 10s
+        port: 5556
+        scrapeTimeout: 10s
+      operator:
+        enabled: false
+        serviceMonitor:
+          namespace: monitoring
+          selector:
+            prometheus: kube-prometheus
+    replica:
+      annotations: {}
+    replicas: 2
+    resources:
+      requests:
+        cpu: 100m
+        memory: 256Mi
+    service:
+      type: ClusterIP
+
