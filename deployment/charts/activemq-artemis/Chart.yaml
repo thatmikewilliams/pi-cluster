@@ -1,0 +1,22 @@
+apiVersion: v1
+appVersion: 2.17.0
+description: a multi-protocol, embeddable, very high performance, clustered, asynchronous
+  messaging system.
+home: https://activemq.apache.org/artemis/
+icon: https://activemq.apache.org/assets/img/activemq_logo_icon.png
+keywords:
+- activemq
+- artemis
+- messaging
+- mom
+- amqp
+- jms
+- mqtt
+maintainers:
+- email: kahoot.ali@gmail.com
+  name: kahootali
+name: activemq-artemis
+sources:
+- https://github.com/kubernetes/charts
+- https://github.com/apache/activemq-artemis
+version: 1.0.1
