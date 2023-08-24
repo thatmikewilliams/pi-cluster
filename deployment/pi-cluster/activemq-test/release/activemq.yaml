@@ -50,8 +50,8 @@ spec:
       pullPolicy: IfNotPresent
       pullSecret: ""
       registry: docker.io
-      repository: apache/activemq-artemis
-      tag: 2.30.0
+      repository: symptoma/activemq
+      tag: 5.18.0
     persistence:
       accessMode: ReadWriteOnce
       enabled: false
