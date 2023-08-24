@@ -10,8 +10,8 @@ spec:
       chart: deployment/charts/activemq-artemis
       reconcileStrategy: ChartVersion
       sourceRef:
-        kind: HelmRepository
-        name: activemq-artemis
+        kind: GitRepository
+        name: pi-cluster-charts
   interval: 1m0s
   values:
     antiAffinity: soft
