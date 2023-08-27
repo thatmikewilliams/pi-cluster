@@ -49,9 +49,9 @@ spec:
     image:
       pullPolicy: IfNotPresent
       pullSecret: ""
-      registry: docker.io
-      repository: symptoma/activemq
-      tag: 5.18.0
+      registry: ghcr.io
+      repository: agoradcm/apache/activemq-artemis
+      tag: 2.17.0-ubuntu-11
     persistence:
       accessMode: ReadWriteOnce
       enabled: false
