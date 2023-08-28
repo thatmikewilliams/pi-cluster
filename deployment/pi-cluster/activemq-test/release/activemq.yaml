@@ -50,7 +50,7 @@ spec:
       pullPolicy: IfNotPresent
       pullSecret: ""
       registry: ghcr.io
-      repository: agoradcm/apache/activemq-artemis
+      repository: thatmikewilliams/apache/activemq-artemis
       tag: 2.17.0-ubuntu-11
     persistence:
       accessMode: ReadWriteOnce
