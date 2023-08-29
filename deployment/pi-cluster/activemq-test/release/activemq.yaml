@@ -43,19 +43,19 @@ spec:
     podAnnotations: {}
     podSecurityContext: {}
     replicaCount: 1
-    resources: {}
-    securityContext: {}
-    serviceAccount:
-      annotations: {}
-      create: true
-      name: ""
-    tolerations: []
 
     resources:
       limits:
         memory: 1000Mi
       requests:
         memory: 1000Mi
+
+    securityContext: {}
+    serviceAccount:
+      annotations: {}
+      create: true
+      name: ""
+    tolerations: []
 
     env:
       jvmArgs: "-XX:InitialRAMPercentage=85 -XX:MinRAMPercentage=85 -XX:MaxRAMPercentage=85 -Dcom.sun.management.jmxremote.port=1234"
