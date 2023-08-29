@@ -58,5 +58,5 @@ spec:
     tolerations: []
 
     env:
-      jvmArgs: "-XX:InitialRAMPercentage=85 -XX:MinRAMPercentage=85 -XX:MaxRAMPercentage=85 -Dcom.sun.management.jmxremote.port=1234"
+      jvmArgs: "-XX:InitialRAMPercentage=85 -XX:MinRAMPercentage=85 -XX:MaxRAMPercentage=85 -Dcom.sun.management.jmxremote.port=1234i -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote=true -Dcom.sun.management.jmxremote.ssl=false -XX:+PrintClassHistogram -XX:+UseG1GC -XX:+UseStringDeduplication -Dhawtio.realm=activemq -Dhawtio.offline=true -Dhawtio.rolePrincipalClasses=org.apache.activemq.artemis.spi.core.security.jaas.RolePrincipal -Djolokia.policyLocation=file:/var/lib/artemis-instance/etc/jolokia-access.xml"
 
