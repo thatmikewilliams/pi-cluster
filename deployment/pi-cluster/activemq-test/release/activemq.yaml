@@ -44,9 +44,6 @@ spec:
     replicaCount: 1
     resources: {}
     securityContext: {}
-    service:
-      port: 8161
-      type: ClusterIP
     serviceAccount:
       annotations: {}
       create: true
