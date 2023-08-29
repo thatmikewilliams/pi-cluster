@@ -24,7 +24,7 @@ spec:
     image:
       pullPolicy: IfNotPresent
       repository: ghcr.io/thatmikewilliams/apache/activemq-artemis
-      tag: 2.30.0-ubuntu-11
+      tag: 2.30.0-ubuntu
     imagePullSecrets:
       - name: regcred
     ingress:
