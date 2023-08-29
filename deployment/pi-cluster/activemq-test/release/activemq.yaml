@@ -45,7 +45,7 @@ spec:
     resources: {}
     securityContext: {}
     service:
-      port: 80
+      port: 8161
       type: ClusterIP
     serviceAccount:
       annotations: {}
