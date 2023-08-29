@@ -7,9 +7,13 @@ metadata:
 spec:
   type: {{ .Values.service.type }}
   ports:
-    - port: {{ .Values.service.port }}
-      targetPort: http
+    - port: {{ .Values.service.jolokia.port }}
+      targetPort: jolokia
       protocol: TCP
-      name: http
+      name: jolokia
+    - port: {{ .Values.service.jmx.port }}
+      targetPort: jmx
+      protocol: TCP
+      name: jmx
   selector:
     {{- include "activemq-artemis.selectorLabels" . | nindent 4 }}

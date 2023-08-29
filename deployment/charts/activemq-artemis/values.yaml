@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: nginx
+  repository: ghcr.io/agoradcm/apache/activemq-artemis
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: ""
@@ -38,8 +38,12 @@ securityContext: {}
 
   # default service port for the admin UI is 8161 - has a web interface exposing joloko - a JMX-over-http bridge
 service:
-  type: ClusterIP
-  port: 8161
+  jolokia:
+    type: ClusterIP
+    port: 8161
+  jmx:
+    type: ClusterIP
+    port: 1234
 
 ingress:
   enabled: false
