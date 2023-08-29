@@ -2,7 +2,7 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: activemq-test
+  name: activemq-artemis
   namespace: test
 spec:
   chart:
@@ -14,67 +14,42 @@ spec:
         name: pi-cluster-charts
   interval: 1m0s
   values:
-    antiAffinity: soft
-    artemisPassword: simetraehcapa
-    artemisUser: artemis
-    configmap:
-      extraConfig: {}
-    deployment:
-      annotations: {}
-      masterLivenessProbe:
-        initialDelaySeconds: 10
-        periodSeconds: 10
-        tcpSocket:
-          port: http
-      masterReadinessProbe:
-        initialDelaySeconds: 10
-        periodSeconds: 10
-        tcpSocket:
-          port: core
-      securityContext: {}
-      slaveLivenessProbe:
-        initialDelaySeconds: 10
-        periodSeconds: 10
-        tcpSocket:
-          port: http
-      slaveReadinessProbe:
-        initialDelaySeconds: 10
-        periodSeconds: 10
-        tcpSocket:
-          port: core
-    env:
-    - name: DISABLE_SECURITY
-      value: "true"
-    global: null
+    affinity: {}
+    autoscaling:
+      enabled: false
+      maxReplicas: 100
+      minReplicas: 1
+      targetCPUUtilizationPercentage: 80
+    fullnameOverride: ""
     image:
       pullPolicy: IfNotPresent
-      pullSecret: regcred
-      registry: ghcr.io
-      repository: thatmikewilliams/apache/activemq-artemis
-      tag: 2.17.0-ubuntu-11
-    persistence:
-      accessMode: ReadWriteOnce
-      enabled: false
-      size: 2Gi
-      testJournalPerformance: AUTO
-    prometheus:
-      jmx:
-        interval: 10s
-        port: 5556
-        scrapeTimeout: 10s
-      operator:
-        enabled: false
-        serviceMonitor:
-          namespace: monitoring
-          selector:
-            prometheus: kube-prometheus
-    replica:
+      repository: ghcr.io/thatmikewilliams/apache/activemq-artemis
+      tag: 2.30.0-ubuntu-11
+    imagePullSecrets:
+    - regcred
+    ingress:
       annotations: {}
-    replicas: 2
-    resources:
-      requests:
-        cpu: 100m
-        memory: 256Mi
+      className: ""
+      enabled: false
+      hosts:
+      - host: chart-example.local
+        paths:
+        - path: /
+          pathType: ImplementationSpecific
+      tls: []
+    nameOverride: ""
+    nodeSelector: {}
+    podAnnotations: {}
+    podSecurityContext: {}
+    replicaCount: 1
+    resources: {}
+    securityContext: {}
     service:
+      port: 80
       type: ClusterIP
+    serviceAccount:
+      annotations: {}
+      create: true
+      name: ""
+    tolerations: []
 
