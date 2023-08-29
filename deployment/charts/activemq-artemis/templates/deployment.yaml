@@ -55,6 +55,10 @@ spec:
               port: jolokia
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+          env:
+            - name: JVM_ARGS
+              value: {{ .Values.env.jvmArgs }}
+
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
