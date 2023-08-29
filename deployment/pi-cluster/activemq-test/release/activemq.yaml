@@ -27,6 +27,7 @@ spec:
       tag: 2.30.0-ubuntu
     imagePullSecrets:
       - name: regcred
+
     ingress:
       annotations: {}
       className: ""
@@ -49,4 +50,10 @@ spec:
       create: true
       name: ""
     tolerations: []
+
+    resources:
+      limits:
+        memory: 1000Mi
+      requests:
+        memory: 1000Mi
 
