@@ -36,9 +36,10 @@ securityContext: {}
   # runAsNonRoot: true
   # runAsUser: 1000
 
+  # default service port for the admin UI is 8161 - has a web interface exposing joloko - a JMX-over-http bridge
 service:
   type: ClusterIP
-  port: 80
+  port: 8161
 
 ingress:
   enabled: false
