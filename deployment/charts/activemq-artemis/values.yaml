@@ -93,3 +93,6 @@ livenessProbe:
   successThreshold: 1
   failureThreshold: 10
 
+env:
+  jvmArgs: "-XX:InitialRAMPercentage=85 -XX:MinRAMPercentage=85 -XX:MaxRAMPercentage=85"
+
