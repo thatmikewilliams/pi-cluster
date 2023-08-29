@@ -80,3 +80,11 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+livenessProbe:
+  initialDelaySeconds: 180
+  periodSeconds: 15
+  timeoutSeconds: 5
+  successThreshold: 1
+  failureThreshold: 10
+
