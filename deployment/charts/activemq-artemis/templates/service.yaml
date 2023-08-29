@@ -1,25 +1,15 @@
 apiVersion: v1
 kind: Service
 metadata:
-  annotations:
-    # Exclude unready slave nodes from DNS
-    service.alpha.kubernetes.io/tolerate-unready-endpoints: "false"
-  name: {{ include "artemis.fullname" . }}
+  name: {{ include "activemq-artemis.fullname" . }}
   labels:
-{{ include "artemis.labels.standard" . | indent 4 }}
+    {{- include "activemq-artemis.labels" . | nindent 4 }}
 spec:
-  ports:
-  - name: http
-    port: 8161
-    targetPort: http
-  - name: core
-    port: 61616
-    targetPort: core
-  - name: amqp
-    port: 5672
-    targetPort: amqp
   type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
   selector:
-    app: {{ template "artemis.name" . }}
-    release: {{ .Release.Name | quote }}
-  sessionAffinity: "ClientIP"
+    {{- include "activemq-artemis.selectorLabels" . | nindent 4 }}
