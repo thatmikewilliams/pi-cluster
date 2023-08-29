@@ -1,22 +1,14 @@
-apiVersion: v1
-appVersion: 2.17.0
-description: a multi-protocol, embeddable, very high performance, clustered, asynchronous
-  messaging system.
-home: https://activemq.apache.org/artemis/
-icon: https://activemq.apache.org/assets/img/activemq_logo_icon.png
-keywords:
-- activemq
-- artemis
-- messaging
-- mom
-- amqp
-- jms
-- mqtt
-maintainers:
-- email: kahoot.ali@gmail.com
-  name: kahootali
+apiVersion: v2
 name: activemq-artemis
-sources:
-- https://github.com/kubernetes/charts
-- https://github.com/apache/activemq-artemis
-version: 1.0.1
+description: A chart for deploying activemq-artemis 
+type: application
+
+# This is the chart version. This version number should be incremented each time you make changes
+# to the chart and its templates, including the app version.
+# Versions are expected to follow Semantic Versioning (https://semver.org/)
+version: 1.0.0
+
+# This is the version number of the application being deployed. This version number should be
+# incremented each time you make changes to the application. Versions are not expected to
+# follow Semantic Versioning. They should reflect the version the application is using.
+appVersion: 2.30.0
