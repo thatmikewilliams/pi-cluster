@@ -1,7 +1,7 @@
-- name: ensure mlocate is installed
+- name: ensure plocate is installed
   become: yes
   apt:
-    name: mlocate
+    name: plocate
     state: present
 
 - name: Update locate database

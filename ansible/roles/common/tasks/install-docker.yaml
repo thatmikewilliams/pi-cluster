@@ -1,47 +1,60 @@
-- name: install docker dependencies
-  become: yes
+- name: Update apt package index
+  apt:
+    update_cache: yes
+
+- name: Ensure dependencies are installed
   apt:
     name:
-      - apt-transport-https
       - ca-certificates
-      - lsb-release
-      - gnupg
-    state: latest
-    update_cache: true
-
-- name: add docker signing key
-  become: yes
-  apt_key:
-    url: "https://download.docker.com/linux/{{ ansible_distribution | lower }}/gpg"
+      - curl
     state: present
 
-- name: add docker repository into sources list
-  become: yes
+- name: Create directory for Docker GPG key
+  file:
+    path: /etc/apt/keyrings
+    state: directory
+    mode: '0755'
+
+- name: Download Docker's GPG key
+  get_url:
+    url: https://download.docker.com/linux/ubuntu/gpg
+    dest: /etc/apt/keyrings/docker.asc
+    mode: '0644'
+
+- name: Map architecture for Docker (there is no aarch64 docker package - needs to be arm64)
+  set_fact:
+    docker_architecture: "{{ 'arm64' if ansible_architecture == 'aarch64' else ansible_architecture }}"
+
+- name: Add Docker Apt repository
   apt_repository:
-    repo: "deb [arch={{ ansible_architecture }}] https://download.docker.com/linux/{{ ansible_distribution | lower }} {{ ansible_distribution_release }} stable"
+    repo: "deb [arch={{ docker_architecture }} signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} stable"
     state: present
     filename: docker
 
-- name: install docker
-  become: yes
+- name: Update apt package index again
+  apt:
+    update_cache: yes
+
+- name: Install Docker
   apt:
     name:
-      - docker
-      - docker.io
-      - docker-compose
-      - docker-registry
-    state: latest
-    update_cache: true
+      - docker-ce
+      - docker-ce-cli
+      - containerd.io
+      - docker-buildx-plugin
+      - docker-compose-plugin
+    state: present
 
-- name: ensure docker service is started
+- name: Ensure Docker service is started
   service:
     name: docker
     state: started
     enabled: yes
 
-- name: adding existing user '{{ ansible_user }}' to docker group
+- name: Adding existing user '{{ ansible_user }}' to docker group
   become: yes
   user:
     name: '{{ ansible_user }}'
     groups: docker
     append: yes
+

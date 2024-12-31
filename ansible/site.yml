@@ -1,14 +1,15 @@
----
-# This is the Main Playbook - containing ALL the roles
-# Hash out roles that you do not want to install and unhash those that you do want
-# ################################################################################
-- name:
+- name: Apply common configuration to all hosts
   hosts: all
   roles:
-    - { role: "common" }
+    - common
 
-- name:
+- name: Apply OLED-specific configuration
   hosts: oled
   roles:
-    - { role: "oled" }
+    - oled
 
+- name: Configure DHCP and DNS
+  hosts: dhcp_dns
+  become: true
+  roles:
+    - dhcp_dns

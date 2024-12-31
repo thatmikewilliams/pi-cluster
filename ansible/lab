@@ -11,6 +11,9 @@ all:
         rp2:
         rp3:
         rp4:
+        rp5:
+        rp6:
+        rp8:
     cluster:
       children:
         control_plane:
@@ -22,4 +25,14 @@ all:
         rp2:
         rp3:
         rp4:
+
+    dhcp_dns:
+      rp6:
+
+    nvme-storage:
+      rp5:
+      rp6:
+
+    sdd-storage:
+      rp8:
 
