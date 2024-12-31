@@ -1,0 +1,22 @@
+---
+- name: Install DHCP and DNS server packages
+  apt:
+    name: "{{ item }}"
+    state: present
+    update_cache: yes
+  with_items:
+    - isc-dhcp-server
+    - bind9
+
+- include_tasks: configure-dhcp.yml
+- include_tasks: configure-dns.yml
+
+- name: Restart and enable services
+  systemd:
+    name: "{{ item }}"
+    state: restarted
+    enabled: true
+  with_items:
+    - isc-dhcp-server
+    - bind9
+

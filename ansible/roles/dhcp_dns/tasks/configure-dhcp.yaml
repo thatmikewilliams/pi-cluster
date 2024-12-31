@@ -1,0 +1,13 @@
+---
+- name: Configure DHCP server
+  template:
+    src: dhcpd.conf.j2
+    dest: /etc/dhcp/dhcpd.conf
+
+- name: Bind DHCP server to interfaces
+  lineinfile:
+    path: /etc/default/isc-dhcp-server
+    regexp: '^INTERFACESv4='
+    line: 'INTERFACESv4="eth0 wlan0"'
+    state: present
+

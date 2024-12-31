@@ -1,5 +1,0 @@
-- name: ensure linux-modules-extra-raspi is installed as this is required by the k3s networking system (vxlan support)
-  become: yes
-  apt:
-    name: linux-modules-extra-raspi
-    state: present

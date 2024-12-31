@@ -1,0 +1,16 @@
+---
+- name: Configure named.conf.local
+  template:
+    src: named.conf.local.j2
+    dest: /etc/bind/named.conf.local
+
+- name: Configure local.lan DNS zone file
+  template:
+    src: db.local.lan.j2
+    dest: /etc/bind/db.local.lan
+
+- name: Configure reverse DNS zone file
+  template:
+    src: db.192.168.8.j2
+    dest: /etc/bind/db.192.168.8
+
