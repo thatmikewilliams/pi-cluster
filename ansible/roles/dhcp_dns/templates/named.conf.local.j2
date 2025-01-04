@@ -12,3 +12,9 @@ zone "8.168.192.in-addr.arpa" {
     allow-update { key "tsig-key"; };
 };
 
+zone "11.168.192.in-addr.arpa" {
+    type master;
+    file "/var/lib/bind/db.192.168.11";
+    allow-update { key "tsig-key"; };
+};
+

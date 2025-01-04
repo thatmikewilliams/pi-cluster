@@ -1,6 +1,6 @@
 $TTL 86400
 @   IN  SOA ns.local.lan. admin.local.lan. (
-        2025010103 ; Serial
+        2025010401 ; Serial
         604800     ; Refresh
         86400      ; Retry
         2419200    ; Expire
@@ -9,7 +9,7 @@ $TTL 86400
     IN  NS  ns.local.lan.
 
 ; Networking
-1    IN  PTR  three-4g-gateway.local.lan.
+1    IN  PTR  three-4g-router.local.lan.
 2    IN  PTR  tplink-garden-wifi.local.lan.
 4    IN  PTR  mikrotik-brigde-master.local.lan.
 5    IN  PTR  mikrotik-brigde-slave.local.lan.
@@ -36,3 +36,6 @@ $TTL 86400
 85   IN  PTR  maw-kworker05.local.lan.
 89   IN  PTR  maw-ingress01.local.lan.
 
+; other on work scanbox
+96   IN  PTR  proxmox.local.lan.
+98   IN  PTR  maw-fedora.local.lan.
