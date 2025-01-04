@@ -9,10 +9,15 @@
     src: db.local.lan.j2
     dest: /var/lib/bind/db.local.lan
 
-- name: Configure reverse DNS zone file
+- name: Configure reverse DNS zone file for 192.168.8.x
   template:
     src: db.192.168.8.j2
     dest: /var/lib/bind/db.192.168.8
+
+- name: Configure reverse DNS zone file for 192.168.11.x
+  template:
+    src: db.192.168.11.j2
+    dest: /var/lib/bind/db.192.168.11
 
 - name: Set ownership and permissions for dynamic zone files
   file:
@@ -23,6 +28,7 @@
   with_items:
     - /var/lib/bind/db.local.lan
     - /var/lib/bind/db.192.168.8
+    - /var/lib/bind/db.192.168.11
 
 - name: Configure the DNS tsig key to allow DHCP to update DNS
   template:

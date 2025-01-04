@@ -1,6 +1,6 @@
 $TTL 86400
 @   IN  SOA ns.local.lan. admin.local.lan. (
-        2025010103 ; Serial
+        2025010401 ; Serial
         604800     ; Refresh
         86400      ; Retry
         2419200    ; Expire
@@ -9,8 +9,10 @@ $TTL 86400
     IN  NS  ns.local.lan.
 ns                          IN      A      192.168.8.16
 
+; 192.168.8.x Network
+
 ; Networking
-three-4g-gateway.local.lan.            IN      A      192.168.8.1;   huawei b353 - garage - smarty 4g - wifi SwallowsMeetMini
+three-4g-router.local.lan.             IN      A      192.168.8.1;   huawei b353 - garage - smarty 4g - wifi SwallowsMeetMini
 tplink-garden-wifi.local.lan.          IN      A      192.168.8.2;   tplink CPE510 v3.20 - garage pole - wifi SwallowsMeet4g
 ;tplink-garden-wifi-bridge.local.lan.  IN      A      192.168.8.3;   TBD - possibly the IP of what used to be the other end of the old tplink bridge - spare device
 mikrotik-brigde-master.local.lan.      IN      A      192.168.8.4;   mikrotik RBDiscG-5acD - garage side
@@ -40,3 +42,11 @@ maw-kworker03.local.lan.               IN      A      192.168.8.83;  scan - prox
 maw-kworker04.local.lan.               IN      A      192.168.8.84;  scan - proxmox vm
 maw-kworker05.local.lan.               IN      A      192.168.8.85;  scan - proxmox vm
 maw-ingress01.local.lan.               IN      A      192.168.8.89;  scan - proxmox vm
+
+; other on work scanbox
+proxmox.local.lan.                     IN      A      192.168.8.96;  scan - proxmox host
+maw-fedora.local.lan.                  IN      A      192.168.8.98;  scan - proxmox vm - main work vm
+
+; 192.168.11.x Network
+airband-router.local.lan.              IN      A      192.168.11.1;  device? - airband - wifi SwallowsMeet
+
