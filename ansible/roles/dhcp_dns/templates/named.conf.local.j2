@@ -1,17 +1,14 @@
-key "dhcp-ddns-key" {
-    algorithm hmac-md5;
-    secret "{{ tsig_key }}";
-};
+include "/etc/bind/tsig-key.conf";
 
 zone "local.lan" {
     type master;
-    file "/etc/bind/db.local.lan";
-    allow-update { key "dhcp-ddns-key"; };
+    file "/var/lib/bind/db.local.lan";
+    allow-update { key "tsig-key"; };
 };
 
 zone "8.168.192.in-addr.arpa" {
     type master;
-    file "/etc/bind/db.192.168.8";
-    allow-update { key "dhcp-ddns-key"; };
+    file "/var/lib/bind/db.192.168.8";
+    allow-update { key "tsig-key"; };
 };
 

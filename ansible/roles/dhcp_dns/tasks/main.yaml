@@ -8,8 +8,8 @@
     - isc-dhcp-server
     - bind9
 
-- include_tasks: configure-dhcp.yml
-- include_tasks: configure-dns.yml
+- include_tasks: configure-dhcp.yaml
+- include_tasks: configure-dns.yaml
 
 - name: Restart and enable services
   systemd:

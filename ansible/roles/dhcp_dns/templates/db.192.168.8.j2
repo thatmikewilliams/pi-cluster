@@ -1,12 +1,38 @@
 $TTL 86400
-@   IN  SOA rpi.local.lan. admin.local.lan. (
-        1         ; Serial
-        604800    ; Refresh
-        86400     ; Retry
-        2419200   ; Expire
-        86400 )   ; Minimum TTL
+@   IN  SOA ns.local.lan. admin.local.lan. (
+        2025010103 ; Serial
+        604800     ; Refresh
+        86400      ; Retry
+        2419200    ; Expire
+        86400 )    ; Minimum TTL
 ;
-    IN  NS  rpi.local.lan.
+    IN  NS  ns.local.lan.
 
-1   IN  PTR rpi.local.lan.
+; Networking
+1    IN  PTR  three-4g-gateway.local.lan.
+2    IN  PTR  tplink-garden-wifi.local.lan.
+4    IN  PTR  mikrotik-brigde-master.local.lan.
+5    IN  PTR  mikrotik-brigde-slave.local.lan.
+3    IN  PTR  tplink-garden-wifi.local.lan.
+9    IN  PTR  tplink-airing-cupboard.local.lan.
+10   IN  PTR  netgear-24p-switch.local.lan.
+
+; Raspberry Pi
+11   IN  PTR  rpi1.local.lan.
+12   IN  PTR  rpi2.local.lan.
+13   IN  PTR  rpi3.local.lan.
+14   IN  PTR  rpi4.local.lan.
+15   IN  PTR  rpi5.local.lan.
+16   IN  PTR  rpi6.local.lan.
+17   IN  PTR  rpi7.local.lan.
+18   IN  PTR  rpi8.local.lan.
+
+; k8s on agora scanbox
+80   IN  PTR  maw-kcontrolp01.local.lan.
+81   IN  PTR  maw-kworker01.local.lan.
+82   IN  PTR  maw-kworker02.local.lan.
+83   IN  PTR  maw-kworker03.local.lan.
+84   IN  PTR  maw-kworker04.local.lan.
+85   IN  PTR  maw-kworker05.local.lan.
+89   IN  PTR  maw-ingress01.local.lan.
 

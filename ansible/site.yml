@@ -1,12 +1,12 @@
-- name: Apply common configuration to all hosts
-  hosts: all
-  roles:
-    - common
-
-- name: Apply OLED-specific configuration
-  hosts: oled
-  roles:
-    - oled
+#- name: Apply common configuration to all hosts
+#  hosts: all
+#  roles:
+#    - common
+#
+#- name: Apply OLED-specific configuration
+#  hosts: oled
+#  roles:
+#    - oled
 
 - name: Configure DHCP and DNS
   hosts: dhcp_dns
