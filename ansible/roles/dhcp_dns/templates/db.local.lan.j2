@@ -1,12 +1,42 @@
 $TTL 86400
-@   IN  SOA rpi.local.lan. admin.local.lan. (
-        1         ; Serial
-        604800    ; Refresh
-        86400     ; Retry
-        2419200   ; Expire
-        86400 )   ; Minimum TTL
+@   IN  SOA ns.local.lan. admin.local.lan. (
+        2025010103 ; Serial
+        604800     ; Refresh
+        86400      ; Retry
+        2419200    ; Expire
+        86400 )    ; Minimum TTL
 ;
-    IN  NS  rpi.local.lan.
+    IN  NS  ns.local.lan.
+ns                          IN      A      192.168.8.16
 
-rpi.local.lan.  IN  A   192.168.8.1
+; Networking
+three-4g-gateway.local.lan.            IN      A      192.168.8.1;   huawei b353 - garage - smarty 4g - wifi SwallowsMeetMini
+tplink-garden-wifi.local.lan.          IN      A      192.168.8.2;   tplink CPE510 v3.20 - garage pole - wifi SwallowsMeet4g
+;tplink-garden-wifi-bridge.local.lan.  IN      A      192.168.8.3;   TBD - possibly the IP of what used to be the other end of the old tplink bridge - spare device
+mikrotik-brigde-master.local.lan.      IN      A      192.168.8.4;   mikrotik RBDiscG-5acD - garage side
+mikrotik-brigde-slave.local.lan.       IN      A      192.168.8.5;   mikrotik RBDiscG-5acD - house side
+tplink-airing-cupboard.local.lan.      IN      A      192.168.8.9;   tplink wifi+powerline - wifi TP-LINK_3487/TP-LINK_3487_5G
+netgear-24p-switch.local.lan.          IN      A      192.168.8.10;  netgear GS324TP - rack1 slot1 - 24 port POE switch
+;tplink-office.local.lan.               IN      A      192.168.8.x;   TBD - tplink powerline - mezanine
+;tplink-living-room.local.lan.          IN      A      192.168.8.x;   TBD - tplink powerline - living room
+;tplink-downstairs1.local.lan.          IN      A      192.168.8.x;   TBD - tplink wifi+powerline - main bedroom
+;tplink-downstairs2.local.lan.          IN      A      192.168.8.x;   TBD - tplink powerline - end bedroom - wifi repeater attached
 
+; Raspberry Pi
+rpi1.local.lan.                        IN      A      192.168.8.11;  pi4 - rack1 slot2 card1 - dhcp static eth
+rpi2.local.lan.                        IN      A      192.168.8.12;  pi4 - rack1 slot2 card2 - dhcp static eth
+rpi3.local.lan.                        IN      A      192.168.8.13;  pi4 - rack1 slot2 card3 - dhcp static eth
+rpi4.local.lan.                        IN      A      192.168.8.14;  pi4 - rack1 slot2 card4 - dhcp static eth
+rpi5.local.lan.                        IN      A      192.168.8.15;  pi5 - rack1 slot3 card1 - dhcp static eth
+rpi6.local.lan.                        IN      A      192.168.8.16;  pi5 - rack1 slot3 card2 - dhcp static eth
+rpi7.local.lan.                        IN      A      192.168.8.17;  pi5 - rack1 slot3 card3 - dhcp static eth
+rpi8.local.lan.                        IN      A      192.168.8.18;  pi4 - rack1 slot3 card4 - dhcp static eth
+
+; k8s on work scanbox
+maw-kcontrolp01.local.lan.             IN      A      192.168.8.80;  scan - proxmox vm
+maw-kworker01.local.lan.               IN      A      192.168.8.81;  scan - proxmox vm
+maw-kworker02.local.lan.               IN      A      192.168.8.82;  scan - proxmox vm
+maw-kworker03.local.lan.               IN      A      192.168.8.83;  scan - proxmox vm
+maw-kworker04.local.lan.               IN      A      192.168.8.84;  scan - proxmox vm
+maw-kworker05.local.lan.               IN      A      192.168.8.85;  scan - proxmox vm
+maw-ingress01.local.lan.               IN      A      192.168.8.89;  scan - proxmox vm

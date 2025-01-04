@@ -6,7 +6,7 @@ ddns-update-style interim;
 update-static-leases on;
 
 key "dhcp-ddns-key" {
-    algorithm hmac-md5;
+    algorithm hmac-sha256;
     secret "{{ tsig_key }}";
 };
 
@@ -23,59 +23,56 @@ zone 8.168.192.in-addr.arpa. {
 subnet 192.168.8.0 netmask 255.255.255.0 {
     range 192.168.8.100 192.168.8.199;
     option routers 192.168.8.1;
-    option domain-name-servers 192.168.8.1;
-
-    host rpi1 {
-        hardware ethernet DC:A6:32:B6:41:21;
-        fixed-address 192.168.8.11;
-    }
-    host rpi2 {
-        hardware ethernet DC:A6:32:B6:41:0C;
-        fixed-address 192.168.8.12;
-    }
-    host rpi3 {
-        hardware ethernet DC:A6:32:B6:39:EC;
-        fixed-address 192.168.8.13;
-    }
-    host rp4 {
-        hardware ethernet DC:A6:32:66:05:BB;
-        fixed-address 192.168.8.14;
-    }
-    host rpi5 {
-        hardware ethernet D8:3A:DD:DD:35:17;
-        fixed-address 192.168.8.15;
-    }
-    host rpi7 {
-        hardware ethernet 2C:CF:67:30:F8:7A;
-        fixed-address 192.168.8.17;
-    }
-    host rpi6 {
-        hardware ethernet D8:3A:DD:DB:8B:C9;
-        fixed-address 192.168.8.16;
-    }
-    host rpi8 {
-        hardware ethernet D8:3A:DD:91:B4:1;
-        fixed-address 192.168.8.18;
-    }
-    host agora-scan-fedora {
-        hardware ethernet BC:24:11:A4:80:F6;
-        fixed-address 192.168.8.96;
-    }
-    # not sure
-    host BC-24-11-19-29-22 {
-        hardware ethernet BC:24:11:19:29:22;
-        fixed-address 192.168.8.97;
-    }
-    host agora-scan-proxmox {
-        hardware ethernet F0:2F:74:23:97:E8;
-        fixed-address 192.168.8.98;
-    }
-
+    option domain-name "local.lan";
+    option domain-name-servers 192.168.8.16;
 }
 
 subnet 192.168.11.0 netmask 255.255.255.0 {
     range 192.168.11.100 192.168.11.199;
     option routers 192.168.11.1;
+    option domain-name "local.lan";
     option domain-name-servers 192.168.11.1;
+}
+
+# 192.168.8.0/24 DHCP assignments
+host rpi1 {
+    hardware ethernet DC:A6:32:B6:41:21;
+    fixed-address 192.168.8.11;
+}
+host rpi2 {
+    hardware ethernet DC:A6:32:B6:41:0C;
+    fixed-address 192.168.8.12;
+}
+host rpi3 {
+    hardware ethernet DC:A6:32:B6:39:EC;
+    fixed-address 192.168.8.13;
+}
+host rp4 {
+    hardware ethernet DC:A6:32:66:05:BB;
+    fixed-address 192.168.8.14;
+}
+host rpi5 {
+    hardware ethernet D8:3A:DD:DD:35:17;
+    fixed-address 192.168.8.15;
+}
+host rpi7 {
+    hardware ethernet 2C:CF:67:30:F8:7A;
+    fixed-address 192.168.8.17;
+}
+host rpi6 {
+    hardware ethernet D8:3A:DD:DB:8B:C9;
+    fixed-address 192.168.8.16;
+}
+host rpi8 {
+    hardware ethernet D8:3A:DD:91:B4:1;
+    fixed-address 192.168.8.18;
+}
+host agora-scan-fedora {
+    hardware ethernet BC:24:11:A4:80:F6;
+    fixed-address 192.168.8.96;
+}
+host agora-scan-proxmox {
+    hardware ethernet F0:2F:74:23:97:E8;
+    fixed-address 192.168.8.98;
 }
 
