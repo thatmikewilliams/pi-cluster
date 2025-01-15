@@ -34,6 +34,18 @@ rpi6.local.lan.                        IN      A      192.168.8.16;  pi5 - rack1
 rpi7.local.lan.                        IN      A      192.168.8.17;  pi5 - rack1 slot3 card3 - dhcp static eth
 rpi8.local.lan.                        IN      A      192.168.8.18;  pi4 - rack1 slot3 card4 - dhcp static eth
 
+; k8s on work scanbox - metallb
+metallb-192.168.8.70.local.lan.        IN      A      192.168.8.70
+metallb-192.168.8.71.local.lan.        IN      A      192.168.8.71
+metallb-192.168.8.72.local.lan.        IN      A      192.168.8.72
+metallb-192.168.8.73.local.lan.        IN      A      192.168.8.73
+metallb-192.168.8.74.local.lan.        IN      A      192.168.8.74
+metallb-192.168.8.75.local.lan.        IN      A      192.168.8.75
+metallb-192.168.8.76.local.lan.        IN      A      192.168.8.76
+metallb-192.168.8.77.local.lan.        IN      A      192.168.8.77
+metallb-192.168.8.78.local.lan.        IN      A      192.168.8.78
+metallb-192.168.8.79.local.lan.        IN      A      192.168.8.79
+
 ; k8s on work scanbox
 maw-kcontrolp01.local.lan.             IN      A      192.168.8.80;  scan - proxmox vm
 maw-kworker01.local.lan.               IN      A      192.168.8.81;  scan - proxmox vm
