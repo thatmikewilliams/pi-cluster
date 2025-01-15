@@ -1,6 +1,6 @@
 all:
   vars:
-    ansible_user: ubuntu
+    ansible_user: mikewilliams
   children:
     control_plane:
       hosts:
@@ -8,12 +8,9 @@ all:
     nodes:
       hosts:
         rp1:
-        rp2:
+        #rp2:
         rp3:
-        rp4:
-        rp5:
-        rp6:
-        rp8:
+        #rp4:
     cluster:
       children:
         control_plane:
@@ -25,14 +22,4 @@ all:
         rp2:
         rp3:
         rp4:
-
-    dhcp_dns:
-      rp6:
-
-    nvme-storage:
-      rp5:
-      rp6:
-
-    sdd-storage:
-      rp8:
 
