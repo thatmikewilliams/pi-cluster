@@ -1,0 +1,1 @@
+# The yaml files, including relative path, that helm should ignore during deployment. Used for backup sites where only DBs run, outside of failover.
