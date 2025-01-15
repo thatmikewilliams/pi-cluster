@@ -14,9 +14,7 @@ spec:
         kind: GitRepository
         name: charts
         namespace: flux-system
-      # Off the shelf chart doesn't need to be pulled frequently.
-      # Lower this value to 5m when upgrading the chart.
-      interval: 12h
+      interval: 5m
   install:
     disableWait: true
     remediation:
