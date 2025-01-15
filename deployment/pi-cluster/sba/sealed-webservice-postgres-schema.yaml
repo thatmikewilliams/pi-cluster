@@ -1,0 +1,16 @@
+---
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  creationTimestamp: null
+  name: webservice-postgres-schema
+  namespace: sba
+spec:
+  encryptedData:
+    schema.sql: AgCmgBf2MRcwpOYjFdZsrHBkPR2K80vRdzi6HdShupYhBA4RssEithzE/7sGuiwCKCzOVXUa5tdPZg9K0zvlP0GkQwGHl0tZ2Jg/NtDQr6j8bBy+6Jri0aNGYq2rjpUVeSN+kRIAK0iZLCndmQQ3TWWnHLxBTNjXkQ8htQFcovvSpbf5Yy+Va4wFPUYc9VBK+vAduQ9LA2RITMe9jZ8mREm5p1wP8aOjBFEOoFHuUQ6z6gy9nmOlY2YjioxWLXmaPP7l4huXMch6kr0V0ODdpn7/CwqDpvMZ3qAZtFi1VgDJax7mlGfZdN2GQFxkQT9ogVRqe+opmg8wLjpkh/I3uZ36xiE8MniFHcFVZ2VsC3Kxpn1TIf1sC41CBPUaVIPTbiWgco6JZ0Cuaf2mFk2Y6hBcy80r5x5lJRHWaHopMut0tbh82e/mu/gJz5Oa5eyUpkXe3iGqyDP59kZfa82QFmeELqtjE9ArcFey97GqMY1Ldxal/WZ7lwo1ll3A6KnDfg2AFHJPz818obngGJicMYje7Q8vmz2qoP94gir9Tl9c0YjQi6TMh1NwXIvZDW5Ef1G2rcQLd/bVvNexHpL2Zc+y3dpiPecauwkeB0NqokSqrcJza875LO/Y1Cu+6bhWXREzmyx1ml/60aW/B0BA4L7PfCNaLnzrYVFnFsh8HDlR4ha4d5Nkr7zIAXk/6mnY/0m4Tgxdc3mnnHG5emyDOKlbqvtQ45TFcS710i+oT9NkHlaIR25fYTHDGCWa5gDhSGES+Am2pAclId8F+hi5cLOs7gW+m9yvWmICfm3nZAj2HShTrLJCdvhjcd5m1vfz1bH7/s/W0pJhLsdqVi4XOzLgODnEqOpZhAeJaYDB/+APHRoob8hIm5PLjLSnlJzQMMU=
+  template:
+    metadata:
+      creationTimestamp: null
+      name: webservice-postgres-schema
+      namespace: sba
+    type: Opaque
