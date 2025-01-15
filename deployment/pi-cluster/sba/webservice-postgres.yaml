@@ -38,7 +38,7 @@ spec:
     #   imageRegistry: myRegistryName
     #   imagePullSecrets:
     #     - myRegistryKeySecretName
-    #   storageClass: longhorn
+      storageClass: local-path
 
     ## Bitnami PostgreSQL image version
     ## ref: https://hub.docker.com/r/bitnami/postgresql/tags/
