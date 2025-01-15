@@ -1,25 +1,26 @@
 all:
   vars:
     ansible_user: mikewilliams
+    ansible_become: true
   children:
     control_plane:
       hosts:
-        rp1:
+        rpi1:
     nodes:
       hosts:
-        rp1:
-        #rp2:
-        rp3:
-        #rp4:
+        rpi1:
+        rpi2:
+        rpi3:
+        rpi4:
     cluster:
       children:
         control_plane:
         nodes:
 
-    oled:
-      hosts:
-        rp1:
-        rp2:
-        rp3:
-        rp4:
+#    oled:
+#      hosts:
+#        rpi1:
+#        rpi2:
+#        rpi3:
+#        rpi4:
 
