@@ -38,7 +38,7 @@ spec:
     #   imageRegistry: myRegistryName
     #   imagePullSecrets:
     #     - myRegistryKeySecretName
-      storageClass: local-path
+    #   storageClass: local-path
 
     ## Bitnami PostgreSQL image version
     ## ref: https://hub.docker.com/r/bitnami/postgresql/tags/
@@ -432,7 +432,7 @@ spec:
       ##
       subPath: ''
 
-      storageClass: "longhorn"
+      storageClass: "local-path"
       accessModes:
         - ReadWriteOnce
       size: 5Gi
