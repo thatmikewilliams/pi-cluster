@@ -45,8 +45,6 @@ spec:
       sGfS4bIqfS8yDUXiEMcwhQ==
       -----END CERTIFICATE-----
 
-    proxyInit:
-      ignoreOutboundPorts: "20001"
     proxy:
       # -- Default set of opaque ports
       # - SMTP (25,587) server-first
@@ -63,7 +61,6 @@ spec:
       # - Corda Node (14000,14001,14002,14003)
       # - ActiveMQ broker port (61616)
       opaquePorts: "25,587,1099,3306,4317,4318,4444,5432,6363,6379,7474,7687,9300,11211,14000,14001,14002,14003,61616"
-      ignoreOutboundPorts: "20001"
 
       # Enables the proxy's /shutdown admin endpoint
       # We need this to allow cronjobs to tell the proxy to shutdown after 
