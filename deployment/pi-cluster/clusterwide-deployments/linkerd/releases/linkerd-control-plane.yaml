@@ -28,6 +28,9 @@ spec:
     timeout: 60s
   values:
     cniEnabled: true
+    networkValidator:
+      # -- Timeout before network-validator fails to validate the pod's network connectivity
+      timeout: "30s"
 
     identityTrustAnchorsPEM: |
       -----BEGIN CERTIFICATE-----
