@@ -1,0 +1,43 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: metallb
+  namespace: metallb-system
+spec:
+  releaseName: metallb
+  interval: 120m
+  chart:
+    spec:
+      chart: deployment/charts/metallb
+      version: '*'
+      sourceRef:
+        kind: GitRepository
+        name: charts
+        namespace: flux-system
+      # Don't need to pull charts for cert-manager every 5mins incressing this to every 12 hours.
+      # Will have to change the value to <= 5mins when upgrading
+      interval: 10m
+  install:
+    remediation:
+      retries: 5
+  upgrade:
+    disableWait: true
+    remediation:
+      retries: 1
+      strategy: rollback
+    timeout: 30s
+  values:
+    global:
+      compatibility:
+        openshift:
+          adaptSecurityContext: disabled
+    psp:
+      create: false
+    controller:
+      psp:
+        create: false
+    speaker:
+      secretName: "metallb-memberlist"
+      psp:
+        create: false
