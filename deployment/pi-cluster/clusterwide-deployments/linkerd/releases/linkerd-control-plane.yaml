@@ -31,6 +31,7 @@ spec:
     networkValidator:
       # -- Timeout before network-validator fails to validate the pod's network connectivity
       timeout: "30s"
+      connectAddr: "157.245.37.20:20001"
 
     identityTrustAnchorsPEM: |
       -----BEGIN CERTIFICATE-----
