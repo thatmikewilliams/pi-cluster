@@ -30,8 +30,7 @@ spec:
     cniEnabled: true
     networkValidator:
       # -- Timeout before network-validator fails to validate the pod's network connectivity
-      timeout: "30s"
-      connectAddr: "157.245.37.20:20001"
+      timeout: "10s"
 
     identityTrustAnchorsPEM: |
       -----BEGIN CERTIFICATE-----
@@ -46,6 +45,8 @@ spec:
       sGfS4bIqfS8yDUXiEMcwhQ==
       -----END CERTIFICATE-----
 
+    proxyInit:
+      ignoreOutboundPorts: "20001"
     proxy:
       # -- Default set of opaque ports
       # - SMTP (25,587) server-first
