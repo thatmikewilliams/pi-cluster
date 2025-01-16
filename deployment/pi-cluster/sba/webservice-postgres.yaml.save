@@ -36,7 +36,7 @@ spec:
     #   imageRegistry: myRegistryName
     #   imagePullSecrets:
     #     - myRegistryKeySecretName
-    #   storageClass: longhorn
+    #   storageClass: local-path
 
     ## Bitnami PostgreSQL image version
     ## ref: https://hub.docker.com/r/bitnami/postgresql/tags/
@@ -113,9 +113,8 @@ spec:
     ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/
     ##
     securityContext:
-      runAsUser: 0
-    #  enabled: true
-    #  fsGroup: 1001
+      enabled: true
+      fsGroup: 1001
 
     ## Container Security Context
     ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/
@@ -232,10 +231,7 @@ spec:
     ## You will need to configure pgHbaConfiguration if you want to enable this feature with local cluster replication enabled.
     ##
     primaryAsStandBy:
-      ## This is confusing but if this postgres instance is NOT primary we need to set primaryAsStandBy to _true_ to make it the standby db
-      enabled: true
-      primaryHost: 192.168.8.71
-      primaryPort: 5432
+      enabled: false
       
 
     ## PostgreSQL client authentication configuration
@@ -368,7 +364,8 @@ spec:
     service:
       ## PosgresSQL service type
       ##
-      type: ClusterIP
+      type: LoadBalancer
+      loadBalancerIP: 192.168.8.61
       # clusterIP: None
       port: 5432
 
