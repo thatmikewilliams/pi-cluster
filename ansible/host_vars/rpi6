@@ -2,5 +2,5 @@
 new_hostname: rpi6
 # Secret allowing the DHCP server to update dynamic entries into the DNS config
 # TBD - this secret should be outside of git. Check into git for now as only for my home network - security risk extremely minimal
-tsig_key: "/Oxw60xQkC+Cr7wEowpGJTED1ZFPqV2x77UV96fkuN0="
+tsig_key: "JphXX6AlC+IDMyY6jUFFWg=="
 
