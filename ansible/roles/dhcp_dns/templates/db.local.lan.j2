@@ -46,6 +46,18 @@ reserved-192-168-8-27.local.lan.       IN      A      192.168.8.27;  for future 
 reserved-192-168-8-28.local.lan.       IN      A      192.168.8.28;  for future network equipment
 reserved-192-168-8-29.local.lan.       IN      A      192.168.8.29;  for future network equipment
 
+; k8s north on agora scanbox
+maw-north-kcontrolp01.local.lan.       IN      A      192.168.8.60;  scan - proxmox vm
+maw-north-kworker01.local.lan.         IN      A      192.168.8.61;  scan - proxmox vm
+maw-north-kworker02.local.lan.         IN      A      192.168.8.62;  scan - proxmox vm
+
+; k8s north on agora scanbox - metallb
+metalb-north-192-168-8-65.local.lan.   IN      A      192.168.8.65
+metalb-north-192-168-8-66.local.lan.   IN      A      192.168.8.66
+metalb-north-192-168-8-67.local.lan.   IN      A      192.168.8.67
+metalb-north-192-168-8-68.local.lan.   IN      A      192.168.8.68
+metalb-north-192-168-8-69.local.lan.   IN      A      192.168.8.69
+
 ; k8s on work scanbox - metallb
 metallb-192.168.8.70.local.lan.        IN      A      192.168.8.70
 metallb-192.168.8.71.local.lan.        IN      A      192.168.8.71
