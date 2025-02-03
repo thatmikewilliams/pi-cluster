@@ -32,8 +32,8 @@
 
 - name: Configure the DNS tsig key to allow DHCP to update DNS
   template:
-    src: tsig-key.conf.j2
-    dest: /etc/bind/tsig-key.conf
+    src: dhcp-ddns-key.conf.j2
+    dest: /etc/bind/dhcp-ddns-key.conf
 
 - name: Set ownership and permissions for key files
   file:
@@ -43,7 +43,7 @@
     mode: '0600'
   with_items:
     - /etc/bind/rndc.key
-    - /etc/bind/tsig-key.conf
+    - /etc/bind/dhcp-ddns-key.conf
 
 - name: Ensure forwarders are configured in named.conf.options
   blockinfile:
