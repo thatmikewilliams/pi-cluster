@@ -1,6 +1,6 @@
 $TTL 86400
 @   IN  SOA ns.local.lan. admin.local.lan. (
-        2025010401 ; Serial
+        2025030601 ; Serial YYYYMMDDNN
         604800     ; Refresh
         86400      ; Retry
         2419200    ; Expire
@@ -29,8 +29,8 @@ $TTL 86400
 
 ; Networking 2
 20   IN  PTR teltonika-rutc50.local.lan.
-21   IN  PTR reserved-192-168-8-21.local.lan.
-22   IN  PTR reserved-192-168-8-22.local.lan.
+21   IN  PTR bridge2-house.local.lan.
+22   IN  PTR bridge2-garage.local.lan.
 23   IN  PTR reserved-192-168-8-23.local.lan.
 24   IN  PTR reserved-192-168-8-24.local.lan.
 25   IN  PTR reserved-192-168-8-25.local.lan.
@@ -43,13 +43,14 @@ $TTL 86400
 60   IN  PTR  maw-north-kcontrolp01.local.lan.
 61   IN  PTR  maw-north-kworker01.local.lan.
 62   IN  PTR  maw-north-kworker02.local.lan.
+63   IN  PTR  maw-north-kworker03.local.lan.
 
 ; k8s north on agora scanbox - metallb
-65   IN  PTR metalb-north-192-168-8-65.local.lan.
-66   IN  PTR metalb-north-192-168-8-66.local.lan.
-67   IN  PTR metalb-north-192-168-8-67.local.lan.
-68   IN  PTR metalb-north-192-168-8-68.local.lan.
-69   IN  PTR metalb-north-192-168-8-69.local.lan.
+65   IN  PTR metallb-north-192-168-8-65.local.lan.
+66   IN  PTR metallb-north-192-168-8-66.local.lan.
+67   IN  PTR metallb-north-192-168-8-67.local.lan.
+68   IN  PTR metallb-north-192-168-8-68.local.lan.
+69   IN  PTR metallb-north-192-168-8-69.local.lan.
 
 ; k8s on agora scanbox - metallb
 70   IN  PTR  metallb-192.168.8.70.local.lan.
