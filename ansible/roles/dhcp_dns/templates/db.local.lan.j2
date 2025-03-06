@@ -1,13 +1,13 @@
 $TTL 86400
 @   IN  SOA ns.local.lan. admin.local.lan. (
-        2025010401 ; Serial
+        2025030601 ; Serial YYYYMMDDNN
         604800     ; Refresh
         86400      ; Retry
         2419200    ; Expire
         86400 )    ; Minimum TTL
 ;
     IN  NS  ns.local.lan.
-ns                          IN      A      192.168.8.16
+ns  IN  A   192.168.8.16
 
 ; 192.168.8.x Network
 
@@ -36,8 +36,8 @@ rpi8.local.lan.                        IN      A      192.168.8.18;  pi4 - rack1
 
 ; Networking 2
 teltonika-rutc50.local.lan.            IN      A      192.168.8.20;  teltonika rutc50 5g wifi6 - garage
-reserved-192-168-8-21.local.lan.       IN      A      192.168.8.21;  for future network equipment
-reserved-192-168-8-22.local.lan.       IN      A      192.168.8.22;  for future network equipment
+bridge2-house.local.lan.               IN      A      192.168.8.21;  tplink EAP211-bridge main - house
+bridge2-garage.local.lan.              IN      A      192.168.8.22;  tplink EAP211-bridge client1 - garage
 reserved-192-168-8-23.local.lan.       IN      A      192.168.8.23;  for future network equipment
 reserved-192-168-8-24.local.lan.       IN      A      192.168.8.24;  for future network equipment
 reserved-192-168-8-25.local.lan.       IN      A      192.168.8.25;  for future network equipment
@@ -50,13 +50,14 @@ reserved-192-168-8-29.local.lan.       IN      A      192.168.8.29;  for future 
 maw-north-kcontrolp01.local.lan.       IN      A      192.168.8.60;  scan - proxmox vm
 maw-north-kworker01.local.lan.         IN      A      192.168.8.61;  scan - proxmox vm
 maw-north-kworker02.local.lan.         IN      A      192.168.8.62;  scan - proxmox vm
+maw-north-kworker03.local.lan.         IN      A      192.168.8.63;  scan - proxmox vm
 
 ; k8s north on agora scanbox - metallb
-metalb-north-192-168-8-65.local.lan.   IN      A      192.168.8.65
-metalb-north-192-168-8-66.local.lan.   IN      A      192.168.8.66
-metalb-north-192-168-8-67.local.lan.   IN      A      192.168.8.67
-metalb-north-192-168-8-68.local.lan.   IN      A      192.168.8.68
-metalb-north-192-168-8-69.local.lan.   IN      A      192.168.8.69
+metallb-north-192-168-8-65.local.lan.  IN      A      192.168.8.65
+metallb-north-192-168-8-66.local.lan.  IN      A      192.168.8.66
+metallb-north-192-168-8-67.local.lan.  IN      A      192.168.8.67
+metallb-north-192-168-8-68.local.lan.  IN      A      192.168.8.68
+metallb-north-192-168-8-69.local.lan.  IN      A      192.168.8.69
 
 ; k8s on work scanbox - metallb
 metallb-192.168.8.70.local.lan.        IN      A      192.168.8.70
