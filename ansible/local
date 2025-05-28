@@ -2,5 +2,5 @@
 rpi6 ansible_user=mikewilliams ansible_become=true
 
 [dhcp_dns]
-rpi6
+rpi6 ansible_user=mikewilliams ansible_become=true
 
