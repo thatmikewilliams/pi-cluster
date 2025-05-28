@@ -1,6 +1,6 @@
 $TTL 86400
 @   IN  SOA ns.local.lan. admin.local.lan. (
-        2025030601 ; Serial YYYYMMDDNN
+        2025042218 ; Serial YYYYMMDDNN
         604800     ; Refresh
         86400      ; Retry
         2419200    ; Expire
@@ -31,7 +31,7 @@ $TTL 86400
 20   IN  PTR teltonika-rutc50.local.lan.
 21   IN  PTR bridge2-house.local.lan.
 22   IN  PTR bridge2-garage.local.lan.
-23   IN  PTR reserved-192-168-8-23.local.lan.
+23   IN  PTR nokia-5003.local.lan.
 24   IN  PTR reserved-192-168-8-24.local.lan.
 25   IN  PTR reserved-192-168-8-25.local.lan.
 26   IN  PTR reserved-192-168-8-26.local.lan.
@@ -39,18 +39,11 @@ $TTL 86400
 28   IN  PTR reserved-192-168-8-28.local.lan.
 29   IN  PTR reserved-192-168-8-29.local.lan.
 
-; k8s north on agora scanbox
-60   IN  PTR  maw-north-kcontrolp01.local.lan.
-61   IN  PTR  maw-north-kworker01.local.lan.
-62   IN  PTR  maw-north-kworker02.local.lan.
-63   IN  PTR  maw-north-kworker03.local.lan.
-
-; k8s north on agora scanbox - metallb
-65   IN  PTR metallb-north-192-168-8-65.local.lan.
-66   IN  PTR metallb-north-192-168-8-66.local.lan.
-67   IN  PTR metallb-north-192-168-8-67.local.lan.
-68   IN  PTR metallb-north-192-168-8-68.local.lan.
-69   IN  PTR metallb-north-192-168-8-69.local.lan.
+; k8s west on agora scanbox
+60   IN  PTR  maw-west-kcontrolp03.local.lan.
+;61   IN  PTR  maw-north-kworker01.local.lan.
+;62   IN  PTR  maw-north-kworker02.local.lan.
+;63   IN  PTR  maw-north-kworker03.local.lan.
 
 ; k8s on agora scanbox - metallb
 70   IN  PTR  metallb-192.168.8.70.local.lan.
@@ -64,13 +57,13 @@ $TTL 86400
 78   IN  PTR  metallb-192.168.8.78.local.lan.
 79   IN  PTR  metallb-192.168.8.79.local.lan.
 
-; k8s on agora scanbox
-80   IN  PTR  maw-kcontrolp01.local.lan.
-81   IN  PTR  maw-kworker01.local.lan.
-82   IN  PTR  maw-kworker02.local.lan.
-83   IN  PTR  maw-kworker03.local.lan.
-84   IN  PTR  maw-kworker04.local.lan.
-85   IN  PTR  maw-kworker05.local.lan.
+; k8s west on agora scanbox
+80   IN  PTR  maw-west-kcontrolp01.local.lan.
+81   IN  PTR  maw-west-kworker01.local.lan.
+82   IN  PTR  maw-west-kworker02.local.lan.
+83   IN  PTR  maw-west-kworker03.local.lan.
+84   IN  PTR  maw-west-kworker04.local.lan.
+85   IN  PTR  maw-west-kcontrolp02.local.lan.
 89   IN  PTR  maw-ingress01.local.lan.
 
 ; other on work scanbox

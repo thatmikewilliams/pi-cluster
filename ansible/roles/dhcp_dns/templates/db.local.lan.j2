@@ -1,6 +1,6 @@
 $TTL 86400
 @   IN  SOA ns.local.lan. admin.local.lan. (
-        2025030601 ; Serial YYYYMMDDNN
+        2025042218 ; Serial YYYYMMDDNN
         604800     ; Refresh
         86400      ; Retry
         2419200    ; Expire
@@ -38,7 +38,7 @@ rpi8.local.lan.                        IN      A      192.168.8.18;  pi4 - rack1
 teltonika-rutc50.local.lan.            IN      A      192.168.8.20;  teltonika rutc50 5g wifi6 - garage
 bridge2-house.local.lan.               IN      A      192.168.8.21;  tplink EAP211-bridge main - house
 bridge2-garage.local.lan.              IN      A      192.168.8.22;  tplink EAP211-bridge client1 - garage
-reserved-192-168-8-23.local.lan.       IN      A      192.168.8.23;  for future network equipment
+nokia-5003.local.lan.                  IN      A      192.168.8.23;  nokia-5003 beacon 2 wifi6
 reserved-192-168-8-24.local.lan.       IN      A      192.168.8.24;  for future network equipment
 reserved-192-168-8-25.local.lan.       IN      A      192.168.8.25;  for future network equipment
 reserved-192-168-8-26.local.lan.       IN      A      192.168.8.26;  for future network equipment
@@ -47,17 +47,10 @@ reserved-192-168-8-28.local.lan.       IN      A      192.168.8.28;  for future 
 reserved-192-168-8-29.local.lan.       IN      A      192.168.8.29;  for future network equipment
 
 ; k8s north on agora scanbox
-maw-north-kcontrolp01.local.lan.       IN      A      192.168.8.60;  scan - proxmox vm
-maw-north-kworker01.local.lan.         IN      A      192.168.8.61;  scan - proxmox vm
-maw-north-kworker02.local.lan.         IN      A      192.168.8.62;  scan - proxmox vm
-maw-north-kworker03.local.lan.         IN      A      192.168.8.63;  scan - proxmox vm
-
-; k8s north on agora scanbox - metallb
-metallb-north-192-168-8-65.local.lan.  IN      A      192.168.8.65
-metallb-north-192-168-8-66.local.lan.  IN      A      192.168.8.66
-metallb-north-192-168-8-67.local.lan.  IN      A      192.168.8.67
-metallb-north-192-168-8-68.local.lan.  IN      A      192.168.8.68
-metallb-north-192-168-8-69.local.lan.  IN      A      192.168.8.69
+maw-west-kcontrolp03.local.lan.         IN      A      192.168.8.60;  scan - proxmox vm
+;maw-north-kworker01.local.lan.         IN      A      192.168.8.61;  scan - proxmox vm
+;maw-north-kworker02.local.lan.         IN      A      192.168.8.62;  scan - proxmox vm
+;maw-north-kworker03.local.lan.         IN      A      192.168.8.63;  scan - proxmox vm
 
 ; k8s on work scanbox - metallb
 metallb-192.168.8.70.local.lan.        IN      A      192.168.8.70
@@ -72,12 +65,12 @@ metallb-192.168.8.78.local.lan.        IN      A      192.168.8.78
 metallb-192.168.8.79.local.lan.        IN      A      192.168.8.79
 
 ; k8s on work scanbox
-maw-kcontrolp01.local.lan.             IN      A      192.168.8.80;  scan - proxmox vm
-maw-kworker01.local.lan.               IN      A      192.168.8.81;  scan - proxmox vm
-maw-kworker02.local.lan.               IN      A      192.168.8.82;  scan - proxmox vm
-maw-kworker03.local.lan.               IN      A      192.168.8.83;  scan - proxmox vm
-maw-kworker04.local.lan.               IN      A      192.168.8.84;  scan - proxmox vm
-maw-kworker05.local.lan.               IN      A      192.168.8.85;  scan - proxmox vm
+maw-west-kcontrolp01.local.lan.        IN      A      192.168.8.80;  scan - proxmox vm
+maw-west-kworker01.local.lan.          IN      A      192.168.8.81;  scan - proxmox vm
+maw-west-kworker02.local.lan.          IN      A      192.168.8.82;  scan - proxmox vm
+maw-west-kworker03.local.lan.          IN      A      192.168.8.83;  scan - proxmox vm
+maw-west-kworker04.local.lan.          IN      A      192.168.8.84;  scan - proxmox vm
+maw-west-kcontrolp02.local.lan.        IN      A      192.168.8.85;  scan - proxmox vm
 maw-ingress01.local.lan.               IN      A      192.168.8.89;  scan - proxmox vm
 
 ; other on work scanbox
