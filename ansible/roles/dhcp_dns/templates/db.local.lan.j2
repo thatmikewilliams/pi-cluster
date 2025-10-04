@@ -50,11 +50,10 @@ reserved-192-168-8-29.local.lan.       IN      A      192.168.8.29;  for future 
 csdev1                       IN      A      192.168.8.30; csdev1 - trigkey 5800H mini
 csdb1                        IN      CNAME  csdev1
 
-; k8s north on agora scanbox
-maw-west-kcontrolp03.local.lan.         IN      A      192.168.8.60;  scan - proxmox vm
-maw-aws-kworker01.local.lan.            IN      A      192.168.8.61;  scan - proxmox vm
-;maw-north-kworker02.local.lan.         IN      A      192.168.8.62;  scan - proxmox vm
-;maw-north-kworker03.local.lan.         IN      A      192.168.8.63;  scan - proxmox vm
+; k8s on agora scanbox
+maw-aws-node                 IN      A      192.168.8.60;  scan - proxmox vm
+maw-lon-node                 IN      A      192.168.8.61;  scan - proxmox vm
+maw-ffr-node                 IN      A      192.168.8.62;  scan - proxmox vm
 
 ; k8s on work scanbox - metallb
 metallb-192.168.8.70.local.lan.        IN      A      192.168.8.70
@@ -69,12 +68,6 @@ metallb-192.168.8.78.local.lan.        IN      A      192.168.8.78
 metallb-192.168.8.79.local.lan.        IN      A      192.168.8.79
 
 ; k8s on work scanbox
-maw-west-kcontrolp01.local.lan.        IN      A      192.168.8.80;  scan - proxmox vm
-maw-west-kworker01.local.lan.          IN      A      192.168.8.81;  scan - proxmox vm
-maw-west-kworker02.local.lan.          IN      A      192.168.8.82;  scan - proxmox vm
-maw-west-kworker03.local.lan.          IN      A      192.168.8.83;  scan - proxmox vm
-maw-west-kworker04.local.lan.          IN      A      192.168.8.84;  scan - proxmox vm
-maw-west-kcontrolp02.local.lan.        IN      A      192.168.8.85;  scan - proxmox vm
 maw-ingress01.local.lan.               IN      A      192.168.8.89;  scan - proxmox vm
 
 ; other on work scanbox
