@@ -17,12 +17,8 @@ tplink-garden-wifi.local.lan.          IN      A      192.168.8.2;   tplink CPE5
 ;tplink-garden-wifi-bridge.local.lan.  IN      A      192.168.8.3;   TBD - possibly the IP of what used to be the other end of the old tplink bridge - spare device
 mikrotik-brigde-master.local.lan.      IN      A      192.168.8.4;   mikrotik RBDiscG-5acD - garage side
 mikrotik-brigde-slave.local.lan.       IN      A      192.168.8.5;   mikrotik RBDiscG-5acD - house side
-tplink-airing-cupboard.local.lan.      IN      A      192.168.8.9;   tplink wifi+powerline - wifi TP-LINK_3487/TP-LINK_3487_5G
+tplink-pla-zira.local.lan.             IN      A      192.168.8.9;   tplink 1300+wifi - airing cupboard - static IP
 netgear-24p-switch.local.lan.          IN      A      192.168.8.10;  netgear GS324TP - rack1 slot1 - 24 port POE switch
-;tplink-office.local.lan.               IN      A      192.168.8.x;   TBD - tplink powerline - mezanine
-;tplink-living-room.local.lan.          IN      A      192.168.8.x;   TBD - tplink powerline - living room
-;tplink-downstairs1.local.lan.          IN      A      192.168.8.x;   TBD - tplink wifi+powerline - main bedroom
-;tplink-downstairs2.local.lan.          IN      A      192.168.8.x;   TBD - tplink powerline - end bedroom - wifi repeater attached
 
 ; Raspberry Pi
 rpi1.local.lan.                        IN      A      192.168.8.11;  pi4 - rack1 slot2 card1 - dhcp static eth
@@ -38,17 +34,17 @@ rpi8.local.lan.                        IN      A      192.168.8.18;  pi4 - rack1
 teltonika-rutc50.local.lan.            IN      A      192.168.8.20;  teltonika rutc50 5g wifi6 - garage
 bridge2-house.local.lan.               IN      A      192.168.8.21;  tplink EAP211-bridge main - house
 bridge2-garage.local.lan.              IN      A      192.168.8.22;  tplink EAP211-bridge client1 - garage
-nokia-5003.local.lan.                  IN      A      192.168.8.23;  nokia-5003 beacon 2 wifi6
-reserved-192-168-8-24.local.lan.       IN      A      192.168.8.24;  for future network equipment
-reserved-192-168-8-25.local.lan.       IN      A      192.168.8.25;  for future network equipment
-reserved-192-168-8-26.local.lan.       IN      A      192.168.8.26;  for future network equipment
-reserved-192-168-8-27.local.lan.       IN      A      192.168.8.27;  for future network equipment
+nokia-5003.local.lan.                  IN      A      192.168.8.23;  nokia-5003 beacon 2 wifi6 (new airband)
+airband-cambium.local.lan.             IN      A      192.168.8.24;  cambium networks router (old airband)
+tplink-pla-taylor.local.lan.           IN      A      192.168.8.25;  tplink av600+wifi - spare - dhcp static
+tplink-ext-maximus.local.lan.          IN      A      192.168.8.26;  tplink extender - lower back bedroom - dhcp static
+tplink-pla-cornelius.local.lan.        IN      A      192.168.8.27;  tplink 1300+wifi - lower front bedroom - dhcp static
 reserved-192-168-8-28.local.lan.       IN      A      192.168.8.28;  for future network equipment
 reserved-192-168-8-29.local.lan.       IN      A      192.168.8.29;  for future network equipment
 
 ; CS
 csdev1                       IN      A      192.168.8.30; csdev1 - trigkey 5800H mini
-csdb1                        IN      CNAME  csdev1
+csdb1                        IN      CNAME  csdev1;
 
 ; k8s on agora scanbox
 maw-aws-node                 IN      A      192.168.8.60;  scan - proxmox vm
