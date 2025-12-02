@@ -1,0 +1,71 @@
+dhcp_hosts:
+  - name: rpi1
+    mac: "DC:A6:32:B6:41:21"
+    ip: "192.168.8.11"
+  - name: rpi2
+    mac: "DC:A6:32:B6:41:0C"
+    ip: "192.168.8.12"
+  - name: rpi3
+    mac: "DC:A6:32:B6:39:EC"
+    ip: "192.168.8.13"
+  - name: rpi4
+    mac: "DC:A6:32:66:05:BB"
+    ip: "192.168.8.14"
+  - name: rpi5
+    mac: "D8:3A:DD:DD:35:17"
+    ip: "192.168.8.15"
+  - name: rpi7
+    mac: "2C:CF:67:30:F8:7A"
+    ip: "192.168.8.17"
+  - name: rpi6
+    mac: "D8:3A:DD:DB:8B:C9"
+    ip: "192.168.8.16"
+  - name: rpi8
+    mac: "D8:3A:DD:91:B4:1"
+    ip: "192.168.8.18"
+  - name: brigde2-house
+    mac: "B0:19:21:92:59:22"
+    ip: "192.168.8.21"
+  - name: brigde2-garage
+    mac: "B0:19:21:92:55:44"
+    ip: "192.168.8.22"
+  - name: tplink-pla-taylor
+    mac: "60:32:B1:06:5E:C6"
+    ip: "192.168.8.25"
+  - name: tplink-ext-maximus
+    mac: "B0:A7:B9:01:6C:1E"
+    ip: "192.168.8.26"
+  - name: tplink-pla-cornelius
+    mac: "A8:42:A1:33:6D:7F"
+    ip: "192.168.8.27"
+  - name: scan-fedora
+    mac: "BC:24:11:A4:80:F6"
+    ip: "192.168.8.96"
+  - name: scan-proxmox
+    mac: "F0:2F:74:23:97:E8"
+    ip: "192.168.8.98"
+  - name: dell-laptop
+    mac: "FA:34:DC:48:D8:BC"
+    ip: "192.168.8.99"
+  - name: cisco-phone1
+    mac: "2C:86:D2:11:9B:C1"
+    ip: "192.168.8.100"
+  - name: mike-iphone6
+    mac: "96:7E:17:AA:B0:67"
+    ip: "192.168.8.101"
+  # IoT Devices 131-135
+  - name: tuya-socket-1
+    mac: "1C:90:FF:80:A7:AF"
+    ip: "192.168.8.131"
+  - name: tuya-socket-2
+    mac: "1C:90:FF:79:83:82"
+    ip: "192.168.8.132"
+  - name: tuya-socket-3
+    mac: "1C:90:FF:80:E7:91"
+    ip: "192.168.8.133"
+  - name: tuya-socket-4
+    mac: "A0:92:08:63:CB:87"
+    ip: "192.168.8.134"
+  - name: tuya-socket-5
+    mac: "A0:92:08:63:B6:CA"
+    ip: "192.168.8.135"

@@ -1,20 +1,14 @@
-include "/etc/bind/dhcp-ddns-key.conf";
-
 zone "local.lan" {
     type master;
     file "/var/lib/bind/db.local.lan";
-    allow-update { key "dhcp-ddns-key"; };
 };
 
 zone "8.168.192.in-addr.arpa" {
     type master;
     file "/var/lib/bind/db.192.168.8";
-    allow-update { key "dhcp-ddns-key"; };
 };
 
 zone "11.168.192.in-addr.arpa" {
     type master;
     file "/var/lib/bind/db.192.168.11";
-    allow-update { key "dhcp-ddns-key"; };
 };
-
