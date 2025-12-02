@@ -36,7 +36,7 @@ teltonika-4g-router.local.lan.         IN      A      192.168.8.20;  teltonika r
 bridge2-house.local.lan.               IN      A      192.168.8.21;  tplink EAP211-bridge main - house
 bridge2-garage.local.lan.              IN      A      192.168.8.22;  tplink EAP211-bridge client1 - garage
 nokia-5003.local.lan.                  IN      A      192.168.8.23;  nokia-5003 beacon 2 wifi6 (new airband)
-airband-cambium.local.lan.             IN      A      192.168.8.24;  cambium networks router (old airband)
+airband-cambium.local.lan.             IN      A      192.168.8.24;  cambium networks cnR201P router (old airband)
 tplink-pla-taylor.local.lan.           IN      A      192.168.8.25;  tplink av600+wifi - spare - dhcp static
 tplink-ext-maximus.local.lan.          IN      A      192.168.8.26;  tplink extender - lower back bedroom - dhcp static
 tplink-pla-cornelius.local.lan.        IN      A      192.168.8.27;  tplink 1300+wifi - lower front bedroom - dhcp static
@@ -71,6 +71,10 @@ maw-ingress01.local.lan.               IN      A      192.168.8.89;  scan - prox
 proxmox.local.lan.                     IN      A      192.168.8.96;  scan - proxmox host
 maw-fedora.local.lan.                  IN      A      192.168.8.98;  scan - proxmox vm - main work vm
 
-; 192.168.11.x Network
-airband-router.local.lan.              IN      A      192.168.11.1;  cnR201P Cambium Networks - airband - wifi SwallowsMeet
+; --- Auto-generated A records from dhcp_hosts (>= .100 on 192.168.8.x) ---
+{% for h in dhcp_hosts
+     if h.ip.startswith('192.168.8.')
+        and (h.ip.split('.')[3] | int) >= 100 %}
+{{ '%-16s' % h.name }} IN A {{ h.ip }}
+{% endfor %}
 

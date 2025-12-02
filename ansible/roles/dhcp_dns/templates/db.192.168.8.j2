@@ -66,3 +66,10 @@ $TTL 86400
 ; other on work scanbox
 96   IN  PTR  proxmox.local.lan.
 98   IN  PTR  maw-fedora.local.lan.
+
+; --- Auto-generated PTRs for 192.168.8.x where last octet >= 100 ---
+{% for h in dhcp_hosts
+     if h.ip.startswith('192.168.8.')
+        and (h.ip.split('.')[3] | int) >= 100 %}
+{{ h.ip.split('.')[3] }}      IN PTR {{ h.name }}.local.lan.
+{% endfor %}
