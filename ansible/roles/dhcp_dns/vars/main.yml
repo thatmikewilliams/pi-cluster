@@ -1,4 +1,7 @@
 dhcp_hosts:
+  - name: tplink-omada-ap
+    mac: "78:20:51:44:C3:FC"
+    ip: "192.168.8.6"
   - name: rpi1
     mac: "DC:A6:32:B6:41:21"
     ip: "192.168.8.11"
