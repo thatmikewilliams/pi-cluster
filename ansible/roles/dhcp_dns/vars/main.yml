@@ -17,14 +17,14 @@ dhcp_hosts:
   - name: rpi5
     mac: "D8:3A:DD:DD:35:17"
     ip: "192.168.8.15"
-  - name: rpi7
-    mac: "2C:CF:67:30:F8:7A"
-    ip: "192.168.8.17"
   - name: rpi6
     mac: "D8:3A:DD:DB:8B:C9"
     ip: "192.168.8.16"
+  - name: rpi7
+    mac: "2C:CF:67:30:F8:7A"
+    ip: "192.168.8.17"
   - name: rpi8
-    mac: "D8:3A:DD:91:B4:1"
+    mac: "D8:3A:DD:91:B4:12"
     ip: "192.168.8.18"
   - name: brigde2-house
     mac: "B0:19:21:92:59:22"
